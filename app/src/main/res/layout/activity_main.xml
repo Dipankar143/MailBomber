@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mailbomber.mailbomber.MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="** It's Take 5 or 6 Minutes to Reach **"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        />
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="To :"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/black" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="No of Email ( You want to send )"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="* Only 50 Email Send at a time"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:visibility="gone"
+        android:id="@+id/count_error"
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+
+        >
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Random Emails (Recommended)"
+            android:onClick="select"
+            android:id="@+id/random"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Custom Email"
+            android:onClick="select"
+            android:id="@+id/custom_email"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="* Please select one of them"
+            android:textColor="@color/red"
+            android:gravity="center"
+            android:visibility="gone"
+            android:id="@+id/new_error"
+            />
+
+
+    </RadioGroup>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:id="@+id/sender_TextInput">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="From :"
+        android:id="@+id/sender"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Subject"
+        android:id="@+id/subject"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Body"
+        android:id="@+id/body"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+    </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="* Disclaminer:  It's only for Education Purpose"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:text="Send"
+        android:textSize="20sp"
+        android:background="@drawable/button_shap"
+        android:onClick="send"
+        />
+    <com.google.android.gms.ads.NativeExpressAdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="320x300"
+        ads:adUnitId="ca-app-pub-4787614537130897/5817637150">
+    </com.google.android.gms.ads.NativeExpressAdView>
+    <com.google.android.gms.ads.AdView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/adview"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-4787614537130897/6260490282"
+        ></com.google.android.gms.ads.AdView>
+
+</LinearLayout>
+</ScrollView>
